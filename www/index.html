@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <?php session_start(); ?>
+<meta charset="utf-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="viewport" content="user-scalable=no; width=device-width; height=device-height"/>
+<meta />
+<title>Bumblr</title>
+<link rel="stylesheet" type="text/css" href="css/bumblr.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="linkr.js"></script>
+</head>
+<body onload="init();" ontouchmove="blockMove(a_event);">
+
+<!-- Header Element -->
+<section class="wrap" id="header">
+  <div class="cell one"><img src="assets/bumble score.jpg"></div>
+  <div class="cell two"><img src="assets/bumblr title.png"></div>
+  <div class="cell one"><button id="CamButton" onclick="$('#videofile').trigger('click');"/></div>
+</section>
+
+<div class="separator"></div>
+
+<!-- Main Feed -->
+<section class="feed_wrap" id="main_feed"></section>
+
+<div class="separator"></div>
+
+<!-- Footer -->
+<section class="wrap" id="footer">
+  <div class="cell one"><img src="assets/home.png"></div>
+  <div class="cell one"><img src="assets/me.png"></div>
+  <div class="cell one"><img src="assets/more.png"></div>
+</section>
+
+<form action="../action/save_post.php" method="post" id="uploader" enctype="multipart/form-data">
+  <input type="file" name="fileToUpload" id="videofile" onchange="getLocation(uploadMovie);" accept="video/mp4,video/mov,video/m4v">
+</form>
+</body>
+</html>
